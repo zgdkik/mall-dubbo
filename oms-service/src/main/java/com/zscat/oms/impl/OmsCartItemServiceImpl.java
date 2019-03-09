@@ -136,7 +136,8 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
 
     @Override
     public CartProduct getCartProduct(Long productId) {
-        return productDao.getCartProduct(productId);
+        return null;
+      //  return productDao.getCartProduct(productId);
     }
 
     @Override
@@ -164,11 +165,13 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
     public List<SmsCouponHistoryDetail> listCart(List<CartPromotionItem> cartItemList, Integer type,UmsMember currentMember) {
         Date now = new Date();
         //获取该用户所有优惠券
-        List<SmsCouponHistoryDetail> allList = null;
-                //couponHistoryDao.getDetailList(currentMember.getId());
+        List<SmsCouponHistoryDetail> allList = null;//couponHistoryDao.getDetailList(currentMember.getId());
         //根据优惠券使用类型来判断优惠券是否可用
         List<SmsCouponHistoryDetail> enableList = new ArrayList<>();
         List<SmsCouponHistoryDetail> disableList = new ArrayList<>();
+        if (allList==null){
+            return null;
+        }
         for (SmsCouponHistoryDetail couponHistoryDetail : allList) {
             Integer useType = couponHistoryDetail.getCoupon().getUseType();
             BigDecimal minPoint = couponHistoryDetail.getCoupon().getMinPoint();

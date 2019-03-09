@@ -7,10 +7,10 @@ import com.zscat.mall.portal.entity.MemberReadHistory;
 import com.zscat.mall.portal.service.MemberReadHistoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,7 +21,7 @@ import java.util.List;
 @Api(tags = "MemberReadHistoryController", description = "会员商品浏览记录管理")
 @RequestMapping("/api/member/readHistory")
 public class MemberReadHistoryController {
-    @Autowired
+    @Resource
     private MemberReadHistoryService memberReadHistoryService;
 
     @IgnoreAuth

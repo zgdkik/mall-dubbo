@@ -5,12 +5,12 @@ import com.zscat.mall.portal.entity.MemberProductCollection;
 import com.zscat.mall.portal.service.MemberCollectionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -23,7 +23,7 @@ import java.util.List;
 @Api(tags = "MemberCollectionController", description = "会员收藏管理")
 @RequestMapping("/api/collection")
 public class MemberCollectionController extends ApiBaseAction{
-    @Autowired
+    @Resource
     private MemberCollectionService memberCollectionService;
 
     @ApiOperation("添加商品收藏")

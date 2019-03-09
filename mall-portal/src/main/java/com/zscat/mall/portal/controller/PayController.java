@@ -20,9 +20,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
@@ -44,13 +44,13 @@ import java.util.TreeMap;
 public class PayController extends ApiBaseAction {
     private static Logger LOGGER = LoggerFactory.getLogger(PayController.class);
 
-    @Autowired
+    @Resource
     private OmsPortalOrderService portalOrderService;
-    @Autowired
+    @Resource
     private OmsOrderService orderService;
-    @Autowired
+    @Resource
     private UmsMemberService umsMemberService;
-    @Autowired
+    @Resource
     private WxAppletProperties wxAppletProperties;
     /**
      */

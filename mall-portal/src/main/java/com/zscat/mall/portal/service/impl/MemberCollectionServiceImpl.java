@@ -6,9 +6,9 @@ import com.zscat.mall.portal.repository.MemberProductCollectionRepository;
 import com.zscat.mall.portal.service.MemberCollectionService;
 import com.zscat.ums.model.UmsMember;
 import com.zscat.ums.service.UmsMemberService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -18,9 +18,9 @@ import java.util.List;
  */
 @Service
 public class MemberCollectionServiceImpl implements MemberCollectionService {
-    @Autowired
+    @Resource
     private MemberProductCollectionRepository productCollectionRepository;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
     @Override
     public int addProduct(MemberProductCollection productCollection,UmsMember umsMember) {

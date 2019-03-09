@@ -27,12 +27,12 @@ import com.zscat.ums.service.UmsMemberCouponService;
 import com.zscat.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,28 +47,28 @@ import java.util.Map;
 @Api(tags = "AppletMemberController", description = "会员登录注册管理")
 @RequestMapping("/api/applet")
 public class AppletMemberController extends ApiBaseAction {
-    @Autowired
+    @Resource
     private UmsService umsService;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
-    @Autowired
+    @Resource
     private SmsHomeAdvertiseService advertiseService;
-    @Autowired
+    @Resource
     private SmsCouponService couponService;
-    @Autowired
+    @Resource
     private PmsProductAttributeCategoryService productAttributeCategoryService;
 
-    @Autowired
+    @Resource
     private PmsProductService pmsProductService;
 
 
-    @Autowired
+    @Resource
     private OmsOrderService orderService;
 
-    @Autowired
+    @Resource
     private RedisService redisService;
 
-    @Autowired
+    @Resource
     UmsMemberCouponService umsMemberCouponService;
 
     @IgnoreAuth

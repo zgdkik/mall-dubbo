@@ -30,9 +30,9 @@ import com.zscat.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,30 +47,30 @@ import java.util.UUID;
 @Api(tags = "HomeController", description = "首页内容管理")
 @RequestMapping("/api/home")
 public class HomeController extends ApiBaseAction {
-    @Autowired
+    @Resource
     private HomeService homeService;
-    @Autowired
+    @Resource
     UmsMemberCouponService umsMemberCouponService;
-    @Autowired
+    @Resource
     private PmsProductAttributeCategoryService productAttributeCategoryService;
-    @Autowired
+    @Resource
     private SmsHomeAdvertiseService advertiseService;
-    @Autowired
+    @Resource
     private PmsProductService pmsProductService;
-    @Autowired
+    @Resource
     private PmsProductAttributeService productAttributeService;
 
-    @Autowired
+    @Resource
     private PmsProductCategoryService productCategoryService;
-    @Autowired
+    @Resource
     private CmsSubjectService subjectService;
-    @Autowired
+    @Resource
     private RedisService redisService;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
-    @Autowired
+    @Resource
     private MemberProductCollectionRepository productCollectionRepository;
-    @Autowired
+    @Resource
     private PmsBrandService brandService;
     @IgnoreAuth
     @ApiOperation("首页内容页信息展示")

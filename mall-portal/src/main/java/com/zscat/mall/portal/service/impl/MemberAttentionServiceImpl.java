@@ -3,9 +3,9 @@ package com.zscat.mall.portal.service.impl;
 import com.zscat.mall.portal.entity.MemberBrandAttention;
 import com.zscat.mall.portal.repository.MemberBrandAttentionRepository;
 import com.zscat.mall.portal.service.MemberAttentionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Service
 public class MemberAttentionServiceImpl implements MemberAttentionService {
-    @Autowired
+    @Resource
     private MemberBrandAttentionRepository memberBrandAttentionRepository;
 
     @Override

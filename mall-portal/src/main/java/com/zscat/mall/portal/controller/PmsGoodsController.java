@@ -25,9 +25,9 @@ import com.zscat.ums.service.SmsHomeAdvertiseService;
 import com.zscat.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,30 +40,30 @@ import java.util.Map;
 @Api(tags = "GoodsController", description = "首页内容管理")
 @RequestMapping("/api/pms")
 public class PmsGoodsController extends ApiBaseAction{
-    @Autowired
+    @Resource
     private HomeService homeService;
-    @Autowired
+    @Resource
     private PmsProductAttributeCategoryService productAttributeCategoryService;
-    @Autowired
+    @Resource
     private SmsHomeAdvertiseService advertiseService;
-    @Autowired
+    @Resource
     private PmsProductService pmsProductService;
-    @Autowired
+    @Resource
     private PmsProductAttributeService productAttributeService;
 
-    @Autowired
+    @Resource
     private PmsProductCategoryService productCategoryService;
-    @Autowired
+    @Resource
     private CmsSubjectService subjectService;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
-    @Autowired
+    @Resource
     private PmsProductConsultService pmsProductConsultService;
-    @Autowired
+    @Resource
     private RedisService redisService;
-    @Autowired
+    @Resource
     private MemberCollectionService memberCollectionService;
-    @Autowired
+    @Resource
     private MemberProductCollectionRepository productCollectionRepository;
 
     @IgnoreAuth

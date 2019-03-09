@@ -14,7 +14,6 @@ import com.zscat.ums.model.UmsMember;
 import com.zscat.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +29,12 @@ import java.util.List;
 @Api(tags = "OmsCartItemController", description = "购物车管理")
 @RequestMapping("/api/cart")
 public class OmsCartItemController extends  ApiBaseAction{
-    @Autowired
+    @Resource
     private OmsCartItemService cartItemService;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
 
-    @Autowired
+    @Resource
     private PmsSkuStockService pmsSkuStockService;
     @Resource
     private PmsProductService productService;

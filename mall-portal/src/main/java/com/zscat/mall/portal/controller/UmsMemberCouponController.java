@@ -3,7 +3,6 @@ package com.zscat.mall.portal.controller;
 import com.zscat.common.result.CommonResult;
 import com.zscat.oms.dto.CartPromotionItem;
 import com.zscat.oms.service.OmsCartItemService;
-import com.zscat.oms.service.OmsOrderItemService;
 import com.zscat.ums.dto.SmsCouponHistoryDetail;
 import com.zscat.ums.model.SmsCoupon;
 import com.zscat.ums.model.SmsCouponHistory;
@@ -13,7 +12,6 @@ import com.zscat.ums.service.UmsMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,14 +28,14 @@ import java.util.List;
 @Api(tags = "UmsMemberCouponController", description = "用户优惠券管理")
 @RequestMapping("/api/member/coupon")
 public class UmsMemberCouponController extends  ApiBaseAction{
-    @Autowired
+    @Resource
     private UmsMemberCouponService memberCouponService;
-    @Autowired
+    @Resource
     private OmsCartItemService cartItemService;
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
 
-    @Autowired
+    @Resource
     UmsMemberCouponService umsMemberCouponService;
 
     @Resource

@@ -6,12 +6,13 @@ import com.zscat.oms.dto.OmsOrderReturnApplyParam;
 import com.zscat.oms.service.OmsPortalOrderReturnApplyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 /**
  * 申请退货管理Controller
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Api(tags = "OmsPortalOrderReturnApplyController", description = "申请退货管理")
 @RequestMapping("/api/returnApply")
 public class OmsPortalOrderReturnApplyController {
-    @Autowired
+    @Resource
     private OmsPortalOrderReturnApplyService returnApplyService;
 
     @ApiOperation("申请退货")

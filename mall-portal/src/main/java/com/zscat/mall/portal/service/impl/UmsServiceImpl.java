@@ -18,7 +18,6 @@ import com.zscat.ums.service.UmsMemberService;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -53,15 +52,15 @@ public class UmsServiceImpl implements UmsService {
     private Long AUTH_CODE_EXPIRE_SECONDS;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
-    @Autowired
+    @Resource
     private PasswordEncoder passwordEncoder;
     @Resource
     private UmsMemberService memberService;
     @Resource
     private UmsMemberLevelService memberLevelService;
-    @Autowired
+    @Resource
     private AuthenticationManager authenticationManager;
-    @Autowired
+    @Resource
     private UserDetailsService userDetailsService;
     @Override
     public Object loginByWeixin(HttpServletRequest req) {
@@ -145,7 +144,7 @@ public class UmsServiceImpl implements UmsService {
     @Resource
     private RedisService redisService;
 
-    @Autowired
+    @Resource
     private WxAppletProperties wxAppletProperties;
 
     @Override

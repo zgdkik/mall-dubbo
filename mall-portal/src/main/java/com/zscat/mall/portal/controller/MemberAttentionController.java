@@ -6,10 +6,10 @@ import com.zscat.mall.portal.entity.MemberBrandAttention;
 import com.zscat.mall.portal.service.MemberAttentionService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -20,7 +20,7 @@ import java.util.List;
 @Api(tags = "MemberAttentionController", description = "会员关注品牌管理")
 @RequestMapping("/api/member/attention")
 public class MemberAttentionController {
-    @Autowired
+    @Resource
     private MemberAttentionService memberAttentionService;
 
     @ApiOperation("添加品牌关注")

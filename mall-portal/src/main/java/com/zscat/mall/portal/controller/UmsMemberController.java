@@ -7,11 +7,11 @@ import com.zscat.mall.portal.service.UmsService;
 import com.zscat.ums.model.UmsMember;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ import java.util.Map;
 @Api(tags = "UmsMemberController", description = "会员登录注册管理")
 @RequestMapping("/api/member")
 public class UmsMemberController extends ApiBaseAction{
-    @Autowired
+    @Resource
     private UmsService memberService;
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;

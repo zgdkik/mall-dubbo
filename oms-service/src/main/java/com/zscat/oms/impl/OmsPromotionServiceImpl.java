@@ -37,6 +37,9 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
             Long productId = entry.getKey();
             PromotionProduct promotionProduct = getPromotionProductById(productId, promotionProductList);
             List<OmsCartItem> itemList = entry.getValue();
+            if (promotionProduct == null){
+                return null;
+            }
             Integer promotionType = promotionProduct.getPromotionType();
             if (promotionType == 1) {
                 //单品促销
@@ -115,7 +118,8 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
         for (OmsCartItem cartItem : cartItemList) {
             productIdList.add(cartItem.getProductId());
         }
-        return portalProductDao.getPromotionProductList(productIdList);
+        return null;
+      //  return portalProductDao.getPromotionProductList(productIdList);
     }
 
     /**
@@ -259,6 +263,9 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
      * 根据商品id获取商品的促销信息
      */
     private PromotionProduct getPromotionProductById(Long productId, List<PromotionProduct> promotionProductList) {
+       if (promotionProductList==null){
+           return null;
+       }
         for (PromotionProduct promotionProduct : promotionProductList) {
             if (productId.equals(promotionProduct.getId())) {
                 return promotionProduct;

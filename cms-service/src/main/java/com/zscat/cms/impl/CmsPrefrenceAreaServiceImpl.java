@@ -4,7 +4,7 @@ import com.zscat.cms.mapper.CmsPrefrenceAreaMapper;
 import com.zscat.cms.model.CmsPrefrenceArea;
 import com.zscat.cms.model.CmsPrefrenceAreaExample;
 import com.zscat.cms.service.CmsPrefrenceAreaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Service("cmsPrefrenceAreaService")
 public class CmsPrefrenceAreaServiceImpl implements CmsPrefrenceAreaService {
-    @Autowired
+    @Resource
     private CmsPrefrenceAreaMapper prefrenceAreaMapper;
 
     @Override

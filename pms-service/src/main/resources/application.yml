@@ -41,7 +41,7 @@ spring:
     mapper-locations: classpath*:com/**/mapper/*.xml
 
 mybatis:
-  mapper-locations: com/**/mapper/*.xml
+  mapper-locations: classpath*:com/**/mapper/*.xml
 
 zk:
   dubbo-port: 20882

@@ -16,11 +16,11 @@ import com.zscat.ums.model.*;
 import com.zscat.ums.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
@@ -32,36 +32,39 @@ import java.util.*;
  */
 @Service
 public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
-    @Autowired
+    @Resource
     private UmsMemberService memberService;
-    @Autowired
+    @Resource
     private OmsCartItemService cartItemService;
-    @Autowired
+    @Resource
     private UmsMemberReceiveAddressService memberReceiveAddressService;
-    @Autowired
+    @Resource
     private UmsMemberCouponService memberCouponService;
-    @Autowired
+    @Resource
     private UmsIntegrationConsumeSettingService integrationConsumeSettingService;
-    @Autowired
+    @Resource
     private PmsSkuStockService skuStockService;
 
-    @Autowired
+
+    @Resource
+    private OmsCartItemService omsCartItemService;
+    @Resource
     private OmsOrderService orderService;
 
-    @Autowired
+    @Resource
     private SmsCouponHistoryService couponHistoryService;
-    @Autowired
+    @Resource
     private RedisService redisService;
     @Value("${redis.key.prefix.orderId}")
     private String REDIS_KEY_PREFIX_ORDER_ID;
 
-    @Autowired
+    @Resource
     private OmsOrderSettingService orderSettingService;
-    @Autowired
+    @Resource
     private OmsOrderItemService orderItemService;
-    @Autowired
+    @Resource
     private CancelOrderSender cancelOrderSender;
-    @Autowired
+    @Resource
     private OmsPromotionService promotionService;
     private static final Logger log = LoggerFactory.getLogger(OmsPortalOrderServiceImpl.class);
     @Override
@@ -420,7 +423,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         result.setMemberReceiveAddressList(memberReceiveAddressList);
         UmsMemberReceiveAddress address = memberReceiveAddressService.getDefaultItem(currentMember);
         //获取用户可用优惠券列表
-       // List<SmsCouponHistoryDetail> couponHistoryDetailList = memberCouponService.listCart(cartPromotionItemList, 1);
+        List<SmsCouponHistoryDetail> couponHistoryDetailList = omsCartItemService.listCart(cartPromotionItemList, 1,currentMember);
         result.setCouponHistoryDetailList(null);
         //获取用户积分
         result.setMemberIntegration(currentMember.getIntegration());
@@ -785,9 +788,11 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         calcAmount.setFreightAmount(new BigDecimal(0));
         BigDecimal totalAmount = new BigDecimal("0");
         BigDecimal promotionAmount = new BigDecimal("0");
-        for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
-            totalAmount = totalAmount.add(cartPromotionItem.getPrice().multiply(new BigDecimal(cartPromotionItem.getQuantity())));
-            promotionAmount = promotionAmount.add(cartPromotionItem.getReduceAmount().multiply(new BigDecimal(cartPromotionItem.getQuantity())));
+        if (cartPromotionItemList!=null){
+            for (CartPromotionItem cartPromotionItem : cartPromotionItemList) {
+                totalAmount = totalAmount.add(cartPromotionItem.getPrice().multiply(new BigDecimal(cartPromotionItem.getQuantity())));
+                promotionAmount = promotionAmount.add(cartPromotionItem.getReduceAmount().multiply(new BigDecimal(cartPromotionItem.getQuantity())));
+            }
         }
         calcAmount.setTotalAmount(totalAmount);
         calcAmount.setPromotionAmount(promotionAmount);

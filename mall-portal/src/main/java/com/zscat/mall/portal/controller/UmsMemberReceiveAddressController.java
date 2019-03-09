@@ -7,10 +7,10 @@ import com.zscat.ums.model.UmsMemberReceiveAddress;
 import com.zscat.ums.service.UmsMemberReceiveAddressService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,7 +21,7 @@ import java.util.List;
 @Api(tags = "UmsMemberReceiveAddressController", description = "会员收货地址管理")
 @RequestMapping("/api/address")
 public class UmsMemberReceiveAddressController extends ApiBaseAction{
-    @Autowired
+    @Resource
     private UmsMemberReceiveAddressService memberReceiveAddressService;
 
     @ApiOperation("添加收货地址")

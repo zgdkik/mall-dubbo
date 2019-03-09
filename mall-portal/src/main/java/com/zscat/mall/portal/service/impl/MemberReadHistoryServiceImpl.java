@@ -4,9 +4,9 @@ package com.zscat.mall.portal.service.impl;
 import com.zscat.mall.portal.entity.MemberReadHistory;
 import com.zscat.mall.portal.repository.MemberReadHistoryRepository;
 import com.zscat.mall.portal.service.MemberReadHistoryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class MemberReadHistoryServiceImpl implements MemberReadHistoryService {
-    @Autowired
+    @Resource
     private MemberReadHistoryRepository memberReadHistoryRepository;
 
     @Override

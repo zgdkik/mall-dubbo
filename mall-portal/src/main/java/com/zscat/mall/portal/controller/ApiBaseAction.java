@@ -7,7 +7,6 @@ import com.zscat.mall.portal.vo.MemberDetails;
 import com.zscat.ums.model.UmsMember;
 import org.apache.log4j.Logger;
 import org.springframework.beans.TypeMismatchException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -20,6 +19,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.WebRequest;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -38,12 +38,12 @@ public class ApiBaseAction {
     /**
      * 得到request对象
      */
-    @Autowired
+    @Resource
     protected HttpServletRequest request;
     /**
      * 得到response对象
      */
-    @Autowired
+    @Resource
     protected HttpServletResponse response;
 
     public UmsMember getCurrentMember() {

@@ -16,10 +16,10 @@ import com.zscat.ums.model.*;
 import com.zscat.ums.service.SmsFlashPromotionService;
 import com.zscat.ums.service.SmsFlashPromotionSessionService;
 import com.zscat.ums.service.SmsHomeAdvertiseService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -29,25 +29,25 @@ import java.util.List;
  */
 @Service
 public class HomeServiceImpl implements HomeService {
-    @Autowired
+    @Resource
     private SmsHomeAdvertiseService advertiseService;
 
-    @Autowired
+    @Resource
     private SmsFlashPromotionSessionService flashPromotionSessionService;
 
-    @Autowired
+    @Resource
     private SmsFlashPromotionService flashPromotionService;
 
-    @Autowired
+    @Resource
     private PmsProductService productService;
-    @Autowired
+    @Resource
     private PmsProductCategoryService productCategoryService;
-    @Autowired
+    @Resource
     private CmsSubjectService subjectService;
-    @Autowired
+    @Resource
     private PmsProductAttributeCategoryService productAttributeCategoryService;
 
-    @Autowired
+    @Resource
     private PmsProductService pmsProductService;
 
 
