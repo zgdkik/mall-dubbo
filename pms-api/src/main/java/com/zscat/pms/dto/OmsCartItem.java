@@ -1,4 +1,4 @@
-package com.zscat.oms.model;
+package com.zscat.pms.dto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

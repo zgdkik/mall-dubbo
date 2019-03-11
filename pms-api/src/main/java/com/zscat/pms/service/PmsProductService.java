@@ -1,8 +1,6 @@
 package com.zscat.pms.service;
 
-import com.zscat.pms.dto.PmsProductParam;
-import com.zscat.pms.dto.PmsProductQueryParam;
-import com.zscat.pms.dto.PmsProductResult;
+import com.zscat.pms.dto.*;
 import com.zscat.pms.model.PmsProduct;
 
 import java.util.List;
@@ -69,4 +67,8 @@ public interface PmsProductService {
     List<PmsProduct> list(String keyword);
 
     PmsProduct selectByPrimaryKey(Long id);
+
+    List<PromotionProduct> getPromotionProductList(List<OmsCartItem> cartItemList);
+
+    CartProduct getCartProduct(Long productId);
 }

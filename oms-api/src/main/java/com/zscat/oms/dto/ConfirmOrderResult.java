@@ -1,6 +1,7 @@
 package com.zscat.oms.dto;
 
 
+import com.zscat.pms.dto.CartPromotionItem;
 import com.zscat.ums.dto.SmsCouponHistoryDetail;
 import com.zscat.ums.model.UmsIntegrationConsumeSetting;
 import com.zscat.ums.model.UmsMemberReceiveAddress;

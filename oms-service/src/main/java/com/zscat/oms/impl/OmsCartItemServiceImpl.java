@@ -1,15 +1,15 @@
 package com.zscat.oms.impl;
 
 
-import com.zscat.oms.dto.CartProduct;
-import com.zscat.oms.dto.CartPromotionItem;
 import com.zscat.oms.mapper.OmsCartItemMapper;
-import com.zscat.oms.mapper.PortalProductDao;
-import com.zscat.oms.model.OmsCartItem;
-import com.zscat.oms.model.OmsCartItemExample;
 import com.zscat.oms.service.OmsCartItemService;
 import com.zscat.oms.service.OmsPromotionService;
+import com.zscat.pms.dto.CartProduct;
+import com.zscat.pms.dto.CartPromotionItem;
+import com.zscat.pms.dto.OmsCartItem;
+import com.zscat.oms.model.OmsCartItemExample;
 import com.zscat.pms.model.PmsProduct;
+import com.zscat.pms.service.PmsProductService;
 import com.zscat.ums.dto.SmsCouponHistoryDetail;
 import com.zscat.ums.model.SmsCouponProductCategoryRelation;
 import com.zscat.ums.model.SmsCouponProductRelation;
@@ -33,13 +33,13 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
     @Resource
     private OmsCartItemMapper cartItemMapper;
     @Resource
-    private PortalProductDao productDao;
+    private PmsProductService productService;
     @Resource
     private OmsPromotionService promotionService;
 
 
     @Override
-    public OmsCartItem add(OmsCartItem cartItem,PmsProduct pmsProduct,UmsMember currentMember) {
+    public OmsCartItem add(OmsCartItem cartItem, PmsProduct pmsProduct, UmsMember currentMember) {
         cartItem.setMemberId(currentMember.getId());
         cartItem.setMemberNickname(currentMember.getNickname());
         cartItem.setDeleteStatus(0);
@@ -136,8 +136,7 @@ public class OmsCartItemServiceImpl implements OmsCartItemService {
 
     @Override
     public CartProduct getCartProduct(Long productId) {
-        return null;
-      //  return productDao.getCartProduct(productId);
+        return productService.getCartProduct(productId);
     }
 
     @Override

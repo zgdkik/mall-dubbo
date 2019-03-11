@@ -1,7 +1,7 @@
 package com.zscat.oms.service;
 
-import com.zscat.oms.dto.CartPromotionItem;
-import com.zscat.oms.model.OmsCartItem;
+import com.zscat.pms.dto.CartPromotionItem;
+import com.zscat.pms.dto.OmsCartItem;
 
 import java.util.List;
 

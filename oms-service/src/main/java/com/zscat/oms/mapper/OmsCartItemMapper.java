@@ -1,7 +1,8 @@
 package com.zscat.oms.mapper;
 
-import com.zscat.oms.model.OmsCartItem;
+
 import com.zscat.oms.model.OmsCartItemExample;
+import com.zscat.pms.dto.OmsCartItem;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

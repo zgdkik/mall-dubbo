@@ -1,9 +1,7 @@
 package com.zscat.pms.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.zscat.pms.dto.PmsProductParam;
-import com.zscat.pms.dto.PmsProductQueryParam;
-import com.zscat.pms.dto.PmsProductResult;
+import com.zscat.pms.dto.*;
 import com.zscat.pms.mapper.*;
 import com.zscat.pms.model.*;
 import com.zscat.pms.service.PmsProductService;
@@ -55,6 +53,8 @@ public class PmsProductServiceImpl implements PmsProductService {
     @Resource
     private PmsProductVertifyRecordDao productVertifyRecordDao;
 
+    @Resource
+    private PortalProductDao portalProductDao;
     @Override
     public int create(PmsProductParam productParam) {
         int count;
@@ -190,6 +190,21 @@ public class PmsProductServiceImpl implements PmsProductService {
     public PmsProduct selectByPrimaryKey(Long id){
         return productMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public List<PromotionProduct> getPromotionProductList(List<OmsCartItem> cartItemList) {
+        List<Long> productIdList = new ArrayList<>();
+        for (OmsCartItem cartItem : cartItemList) {
+            productIdList.add(cartItem.getProductId());
+        }
+        return portalProductDao.getPromotionProductList(productIdList);
+    }
+
+    @Override
+    public CartProduct getCartProduct(Long productId) {
+        return portalProductDao.getCartProduct(productId);
+    }
+
     @Override
     public int updateVerifyStatus(List<Long> ids, Integer verifyStatus, String detail) {
         PmsProduct product = new PmsProduct();
@@ -346,6 +361,11 @@ public class PmsProductServiceImpl implements PmsProductService {
             LOGGER.warn("创建产品出错:{}", e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
+
+        /**
+         * 查询所有商品的优惠相关信息
+         */
+
     }
 
 }

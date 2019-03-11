@@ -2,10 +2,10 @@ package com.zscat.mall.portal.controller;
 
 
 import com.zscat.common.result.CommonResult;
-import com.zscat.oms.dto.CartProduct;
-import com.zscat.oms.dto.CartPromotionItem;
-import com.zscat.oms.model.OmsCartItem;
 import com.zscat.oms.service.OmsCartItemService;
+import com.zscat.pms.dto.CartProduct;
+import com.zscat.pms.dto.CartPromotionItem;
+import com.zscat.pms.dto.OmsCartItem;
 import com.zscat.pms.model.PmsProduct;
 import com.zscat.pms.model.PmsSkuStock;
 import com.zscat.pms.service.PmsProductService;

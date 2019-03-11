@@ -1,8 +1,8 @@
 package com.zscat.mall.portal.controller;
 
 import com.zscat.common.result.CommonResult;
-import com.zscat.oms.dto.CartPromotionItem;
 import com.zscat.oms.service.OmsCartItemService;
+import com.zscat.pms.dto.CartPromotionItem;
 import com.zscat.ums.dto.SmsCouponHistoryDetail;
 import com.zscat.ums.model.SmsCoupon;
 import com.zscat.ums.model.SmsCouponHistory;

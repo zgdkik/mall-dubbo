@@ -1,13 +1,13 @@
 package com.zscat.oms.impl;
 
-import com.zscat.oms.dto.CartPromotionItem;
-import com.zscat.oms.dto.PromotionProduct;
-import com.zscat.oms.mapper.PortalProductDao;
-import com.zscat.oms.model.OmsCartItem;
 import com.zscat.oms.service.OmsPromotionService;
+import com.zscat.pms.dto.CartPromotionItem;
+import com.zscat.pms.dto.OmsCartItem;
+import com.zscat.pms.dto.PromotionProduct;
 import com.zscat.pms.model.PmsProductFullReduction;
 import com.zscat.pms.model.PmsProductLadder;
 import com.zscat.pms.model.PmsSkuStock;
+import com.zscat.pms.service.PmsProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ import java.util.*;
 @Service("omsPromotionService")
 public class OmsPromotionServiceImpl implements OmsPromotionService {
     @Resource
-    private PortalProductDao portalProductDao;
+    private PmsProductService productService;
 
     @Override
     public List<CartPromotionItem> calcCartPromotion(List<OmsCartItem> cartItemList) {
@@ -114,12 +114,7 @@ public class OmsPromotionServiceImpl implements OmsPromotionService {
      * 查询所有商品的优惠相关信息
      */
     private List<PromotionProduct> getPromotionProductList(List<OmsCartItem> cartItemList) {
-        List<Long> productIdList = new ArrayList<>();
-        for (OmsCartItem cartItem : cartItemList) {
-            productIdList.add(cartItem.getProductId());
-        }
-        return null;
-      //  return portalProductDao.getPromotionProductList(productIdList);
+        return productService.getPromotionProductList(cartItemList);
     }
 
     /**

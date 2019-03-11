@@ -1,4 +1,4 @@
-package com.zscat.oms.dto;
+package com.zscat.pms.dto;
 
 
 import com.zscat.pms.model.PmsProduct;

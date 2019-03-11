@@ -1,8 +1,8 @@
-package com.zscat.oms.mapper;
+package com.zscat.pms.mapper;
 
 
-import com.zscat.oms.dto.CartProduct;
-import com.zscat.oms.dto.PromotionProduct;
+import com.zscat.pms.dto.CartProduct;
+import com.zscat.pms.dto.PromotionProduct;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
