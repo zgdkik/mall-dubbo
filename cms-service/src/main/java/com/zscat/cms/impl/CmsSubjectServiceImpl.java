@@ -5,10 +5,10 @@ import com.zscat.cms.mapper.CmsSubjectMapper;
 import com.zscat.cms.model.CmsSubject;
 import com.zscat.cms.model.CmsSubjectExample;
 import com.zscat.cms.service.CmsSubjectService;
-import org.springframework.beans.factory.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**

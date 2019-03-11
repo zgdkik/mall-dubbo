@@ -4,9 +4,9 @@ import com.zscat.cms.mapper.CmsPrefrenceAreaMapper;
 import com.zscat.cms.model.CmsPrefrenceArea;
 import com.zscat.cms.model.CmsPrefrenceAreaExample;
 import com.zscat.cms.service.CmsPrefrenceAreaService;
-import org.springframework.beans.factory.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
