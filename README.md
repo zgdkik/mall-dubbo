@@ -36,6 +36,11 @@ zscat-platform 提供了常用工具进行封装，包括日志工具、缓存�
 
 ####部署和演示wiki https://github.com/shenzhuan/mall-dubbo/wiki
 
+后台功能列表
+<img src="https://images.gitee.com/uploads/images/2019/0519/170418_d276b6b4_134431.png"  />
+小程序功能列表
+<img src="https://images.gitee.com/uploads/images/2019/0519/170631_20a127ce_134431.png"  />
+
 #### 后端技术
 
 技术 | 说明 | 官网
