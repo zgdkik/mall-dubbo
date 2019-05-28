@@ -130,6 +130,12 @@ nprogress | 进度条控件 | [https://github.com/rstacruz/nprogress](https://gi
 - 在IDEA命令行中运行命令：npm run dev,访问地址：[http://localhost:8090](http://localhost:8090) 即可打开后台管理系统页面;
 
 
+ **_uniapp_** 
+
+uni-app 是一个使用 Vue.js 开发跨平台应用的前端框架，开发者编写一套代码，可编译到iOS、Android、H5、小程序等多个平台。
+
+<img src="https://images.gitee.com/uploads/images/2019/0528/141610_0b812292_134431.jpeg"/>
+
 
 
 ## 目前h5项目已实现功能
