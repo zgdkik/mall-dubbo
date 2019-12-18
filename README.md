@@ -1,15 +1,11 @@
 # zscat-platform
 
-# qq: 951449465
 #### 项目介绍
 
 > 基于SpringBoot+MyBatis的电商系统，包括前台商城系统及后台管理系统。
 
 > 如果该项目对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！
 
-> 或者您可以 "follow" 一下，该项目将持续更新，不断完善功能。
-
-> 项目交流qq群 176736712 473023475 203747031
 
 > 如有问题或者好的建议可以在 Issues 中提。
 
@@ -17,7 +13,6 @@
 
 > dubbo版本mall商城github  https://github.com/shenzhuan/mall-dubbo
 
-> dubbo版本mall商城码云地址  https://gitee.com/catshen/mall-dubbo
 
 zscat-platform是高效率，低封装，面向学习型，面向微服的开源Java EE开发框架。
 
